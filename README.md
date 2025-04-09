@@ -18,3 +18,4 @@ Una API RESTful construida con **Node.js**, **Express**, **TypeScript** y **Mong
 
 ## 📁 Estructura del proyecto
 
+api-rest-music/ ├── node_modules/ ├── src/ │ ├── index.ts # Punto de entrada del servidor │ ├── controllers/ # Controladores de rutas │ ├── middlewares/ # Middlewares personalizados │ ├── models/ # Modelos de Mongoose │ ├── routes/ # Definiciones de rutas │ ├── utils/ # Utilidades como helpers ├── image/ │ └── user/ # Carpeta para imágenes de usuarios ├── dist/ # Archivos compilados de TypeScript ├── .env # Variables de entorno (no subir al repo) ├── tsconfig.json # Configuración de TypeScript ├── package.json └── README.md
