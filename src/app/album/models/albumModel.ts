@@ -1,16 +1,27 @@
 import { Schema, model } from "mongoose";
 
 const AlbumSchema = new Schema({
+  artist: {
+    type: Schema.ObjectId,
+    ref: "Artist"
+  },
   title: {
     type: String,
     required: true,
   },
-  artist: {
-    typre: String,
+  description: String,
+  year: {
+    type: Number,
+    require: true
   },
-  year: Number,
-  genre: String,
-  cover: String,
+  image: {
+    type: String,
+    default: "default.png"
+  },
+  created_at: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-export default model("Album", AlbumSchema);
+export default model("Album", AlbumSchema, "albums");

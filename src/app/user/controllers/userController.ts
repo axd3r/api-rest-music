@@ -267,7 +267,7 @@ const upload = async (req: AuthenticatedRequest, res: Response) => {
         )
 
         if (oldImage) {
-            const oldImagePath = path.join(__dirname, "../../../image/user/", oldImage);
+            const oldImagePath = path.join(__dirname, "../../../storage/image/user/", oldImage);
             fs.unlink(oldImagePath, (err) => {
                 if (err) {
                     console.error("No se pudo eliminar la imagen anterior: ", err.message);
@@ -296,7 +296,7 @@ const upload = async (req: AuthenticatedRequest, res: Response) => {
 
 const avatar = (req: AuthenticatedRequest, res: Response) => {
     const file = req.params.file;
-    const filePath = path.join(__dirname, "../../../image/user/", file);
+    const filePath = path.join(__dirname, "../../../storage/image/user/", file);
     console.log(filePath);
     
     if(!fs.existsSync(filePath)){

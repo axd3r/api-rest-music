@@ -6,7 +6,7 @@ const UserController = require("../controllers/userController");
 
 const storage = multer.diskStorage({
     destination: function(_req, _file, cb) {
-        cb(null, './src/image/user/');
+        cb(null, './src/storage/image/user/');
     },
 
     filename: function(_req, file, cb) {
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const subidas = multer({ storage: storage })
+const subidas = multer({ storage: storage });
 
 router.get("/prueba-user", authMiddleware, UserController.prueba);
 router.post("/save", UserController.save);

@@ -16,7 +16,6 @@ logs
 *.log
 
 # Uploaded images (ajustá esto si las guardás en otra carpeta)
-image/
 uploads/
 
 # IDEs
