@@ -17,13 +17,13 @@ app.use(express.urlencoded({extended: true}));
 
 const UserRoutes = require("./app/user/routes/userRoutes");
 const AlbumRoutes = require("./app/album/routes/albumRoutes");
-const ArtistController = require("./app/artist/routes/artistRoutes");
-const SongController = require("./app/song/routes/songRoutes");
+const ArtistRoutes = require("./app/artist/routes/artistRoutes");
+const SongRoutes = require("./app/song/routes/songRoutes");
 
 app.use("/api/user", UserRoutes);
 app.use("/api/album", AlbumRoutes);
-app.use("/api/artist", ArtistController);
-app.use("/api/song", SongController);
+app.use("/api/artist", ArtistRoutes);
+app.use("/api/song", SongRoutes);
 
 app.get("/", (_, res) => {
     res.send("¡Hola, TypeScript con Express!");

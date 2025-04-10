@@ -1,4 +1,5 @@
-import { router } from "../../../config/router/router.config";
+import express from "express";
+const router = express.Router()
 import { authMiddleware } from "../../../middleware/authMiddleware";
 import multer from "multer";
 const UserController = require("../controllers/userController");

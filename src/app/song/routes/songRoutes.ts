@@ -1,4 +1,5 @@
-import { router } from "../../../config/router/router.config";
+import express from "express";
+const router = express.Router()
 
 const SongController = require("../controllers/songController");
 

@@ -1,4 +1,4 @@
-import { Schema, model } from "../../../config/models/models.config";
+import { Schema, model } from "mongoose";
 
 const UserSchema = new Schema({
   name: {
