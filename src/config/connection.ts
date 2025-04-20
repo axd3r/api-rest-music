@@ -5,7 +5,21 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
-        const MONGO_URI = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DB_NAME}?authSource=admin`;
+        const {
+          MONGO_USER,
+          MONGO_PASSWORD,
+          MONGO_HOST,
+          MONGO_PORT,
+          MONGO_DB_NAME,
+        } = process.env;
+    
+        let MONGO_URI = "";
+    
+        if (MONGO_USER && MONGO_PASSWORD) {
+          MONGO_URI = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB_NAME}?authSource=admin`;
+        } else {
+          MONGO_URI = `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB_NAME}`;
+        }
     
         await mongoose.connect(MONGO_URI)
 
